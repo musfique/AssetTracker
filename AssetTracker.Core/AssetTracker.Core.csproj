@@ -88,6 +88,7 @@
     <Compile Include="BLL\OrganizationManager.cs" />
     <Compile Include="BLL\SubCategoryManager.cs" />
     <Compile Include="BLL\VendorManager.cs" />
+    <Compile Include="Models\Interfaces\IModel\IAudit.cs" />
     <Compile Include="Repository\BaseRepository\BaseRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\DepartmentRepository.cs" />

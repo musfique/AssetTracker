@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace AssetTracker.Core.Models.EntityModel
 {
-    public class AssetPurchase
+    public class AssetPurchaseHeader
     {
         [Key]
-        public int AssetPurchaseID { get; set; }
+        public int AssetPurchaseHeaderID { get; set; }
 
         [Required]
         [Display(Name = "Vendor")]
