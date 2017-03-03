@@ -9,7 +9,7 @@ using AssetTracker.Core.Models.EntityModel;
 
 namespace AssetTracker.Core.Models.ViewModel
 {
-    class AssetPurchaseCreateViewModel
+    public class AssetPurchaseCreateViewModel
     {
         [Required]
         [Display(Name = "Vendor")]
