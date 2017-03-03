@@ -13,7 +13,7 @@ namespace AssetTracker.Core.Models.EntityModel
         public int AssetPurchaseDetailID { get; set; }
 
         [Required]
-        public int AssetPurchaseID { get; set; }
+        public int AssetPurchaseHeaderID { get; set; }
 
         [Required]
         [Display(Name = "Product Category")]
@@ -38,6 +38,7 @@ namespace AssetTracker.Core.Models.EntityModel
         public double WarrantyPeriodUnitID { get; set; }
 
         public virtual WarrantyPeriodUnit WarrantyPeriodUnit { get; set; }
+        public virtual AssetPurchaseHeader AssetPurchaseHeader { get; set; }
         public virtual ICollection<AssetPurchaseDetailSerialNumber> AssetPurchaseDetailSerialNumbers { get; set; }
     }
 }
