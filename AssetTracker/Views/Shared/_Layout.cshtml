@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Asset Tracker</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="shortcut icon" href="~/Images/Asset-tracker-4.png">
+    @RenderSection("css", required: false)
+
+</head>
+<body class="homepage">
+    <header id="header">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                        <img style="height: 45px;
+    width: 169px;" src="~/Images/Asset-tracker-3.png" alt="logo">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-left">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="@Url.Action("Index","Home")">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Asset Purchase <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Entry Asset Purchase</a></li>
+                                <li><a href="#">View Asset Purchases</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Asset Registration <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Entry Asset Registration</a></li>
+                                <li><a href="#">View Asset Registrations</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Asset Movement <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Entry Asset Movement</a></li>
+                                <li><a href="#">View Asset Movements</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Asset Distribution <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Entry Asset Distribution</a></li>
+                                <li><a href="#">View Asset Distributions</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu extra-submenu">
+                            <a tabindex="-1" href="#">Setup <i class="fa fa-angle-down"></i></a>
+
+                            <ul class="dropdown-menu extra-menu">
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Organization <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","Organization")">Create Organization</a></li>
+                                        <li><a href="@Url.Action("Index","Organization")">View Organizations</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Organization Branch <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","OrganizationBranch")">Create Organization Branch</a></li>
+                                        <li><a href="@Url.Action("Index","OrganizationBranch")">View Organization Branches</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Asset Location <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="#">Create Asset Location</a></li>
+                                        <li><a href="#">View Asset Locations</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">General Category <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","GeneralCategory")">Create General Category</a></li>
+                                        <li><a href="@Url.Action("Index","GeneralCategory")">View General Categories</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Category <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","Category")">Create Category</a></li>
+                                        <li><a href="@Url.Action("Index","Category")">View Categories</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Sub Category <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","SubCategory")">Create Sub Category</a></li>
+                                        <li><a href="@Url.Action("Index","SubCategory")">View Sub Categories</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Product Category <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","DetailCategory")">Create Product Category</a></li>
+                                        <li><a href="@Url.Action("Index","DetailCategory")">View Product Categories</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Vendor <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","Vendor")">Create Vendor</a></li>
+                                        <li><a href="@Url.Action("Index","Vendor")">View Vendors</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Employee <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","Employee")">Create Employee</a></li>
+                                        <li><a href="@Url.Action("Index","Employee")">View Employees</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Department <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create", "Department")">Create Department</a></li>
+                                        <li><a href="@Url.Action("Index", "Department")">View Departments</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu dropdown">
+                                    <a href="#">Designation <i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu extra-dropdown">
+                                        <li><a href="@Url.Action("Create","Designation")">Create Designation</a></li>
+                                        <li><a href="@Url.Action("Index", "Designation")">View Designations</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 <a target="_blank" href="@Url.Action("Index","Home")"
+                                   >3 Loosers</a>. All Rights Reserved.
+                </div>
+                @*<div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>*@
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*<script src="~/Scripts/main.js"></script>*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

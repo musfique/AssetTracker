@@ -1,0 +1,80 @@
+﻿@model IEnumerable<AssetTracker.Core.Models.DetailCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">View All Detail Categories</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="button" value="Create" class="btn btn-success" onclick="location.href = '@Url.Action("Create", "DetailCategory")'" />
+
+                </div>
+            </div>
+            <table class="table table-hover table-background table-bordered">
+                <tr>
+                    <th>
+                        @Html.DisplayName("General Category")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Category")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Sub Category")
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DetailCategoryName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DetailCategoryCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DetailCategoryDescription)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubCategory.Category.GeneralCategory.GeneralCategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubCategory.Category.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubCategory.SubCategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DetailCategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DetailCategoryCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DetailCategoryDescription)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.DetailCategoryID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.DetailCategoryID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.DetailCategoryID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @Scripts.Render("~/bundles/datatablejs")
+    <script>
+        $(document).ready(function () {
+            $(".table").DataTable();
+        });
+    </script>
+}

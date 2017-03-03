@@ -1,0 +1,67 @@
+﻿@model IEnumerable<AssetTracker.Core.Models.SubCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">View All Sub Categories</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="button" value="Create" class="btn btn-success" onclick="location.href = '@Url.Action("Create", "SubCategory")'" />
+
+                </div>
+            </div>
+            <table class="table table-hover table-background table-bordered">
+                <tr>
+                    <th>
+                        @Html.DisplayName("General Category")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Category")
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubCategoryName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubCategoryCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubCategoryDescription)
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category.GeneralCategory.GeneralCategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubCategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubCategoryCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubCategoryDescription)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new {id = item.SubCategoryID}) |
+                            @Html.ActionLink("Details", "Details", new {id = item.SubCategoryID}) |
+                            @Html.ActionLink("Delete", "Delete", new {id = item.SubCategoryID})
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

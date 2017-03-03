@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88703D02-16B2-4F44-B4C1-39A270C6F84E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AssetTracker.Core</RootNamespace>
+    <AssemblyName>AssetTracker.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\CategoryManager.cs" />
+    <Compile Include="BLL\DepartmentManager.cs" />
+    <Compile Include="BLL\DesignationManager.cs" />
+    <Compile Include="BLL\DetailCategoryManager.cs" />
+    <Compile Include="BLL\EmployeeManager.cs" />
+    <Compile Include="BLL\GeneralCategoryManager.cs" />
+    <Compile Include="BLL\OrganizationBranchManager.cs" />
+    <Compile Include="BLL\OrganizationManager.cs" />
+    <Compile Include="BLL\SubCategoryManager.cs" />
+    <Compile Include="BLL\VendorManager.cs" />
+    <Compile Include="DAL\BaseDAL\BaseRepository.cs" />
+    <Compile Include="DAL\BaseRepository.cs" />
+    <Compile Include="DAL\CategoryRepository.cs" />
+    <Compile Include="DAL\DepartmentRepository.cs" />
+    <Compile Include="DAL\DesignationRepository.cs" />
+    <Compile Include="DAL\DetailCategoryRepository.cs" />
+    <Compile Include="DAL\EmployeeRepository.cs" />
+    <Compile Include="DAL\GeneralCategoryRepository.cs" />
+    <Compile Include="DAL\OrganizationBranchRepository.cs" />
+    <Compile Include="DAL\OrganizationRepository.cs" />
+    <Compile Include="DAL\SubCategoryRepository.cs" />
+    <Compile Include="DAL\VendorRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\EntityModel\AssetLocation.cs" />
+    <Compile Include="Models\EntityModel\AssetPurchase.cs" />
+    <Compile Include="Models\EntityModel\AssetPurchaseDetail.cs" />
+    <Compile Include="Models\EntityModel\AssetPurchaseDetailSerialNumber.cs" />
+    <Compile Include="Models\EntityModel\Category.cs" />
+    <Compile Include="Models\EntityModel\Department.cs" />
+    <Compile Include="Models\EntityModel\Designation.cs" />
+    <Compile Include="Models\EntityModel\DetailCategory.cs" />
+    <Compile Include="Models\EntityModel\Employee.cs" />
+    <Compile Include="Models\EntityModel\GeneralCategory.cs" />
+    <Compile Include="Models\EntityModel\Organization.cs" />
+    <Compile Include="Models\EntityModel\OrganizationBranch.cs" />
+    <Compile Include="Models\EntityModel\SubCategory.cs" />
+    <Compile Include="Models\EntityModel\Vendor.cs" />
+    <Compile Include="Models\EntityModel\WarrantyPeriodUnit.cs" />
+    <Compile Include="Models\Interfaces\BaseInterface\IManager.cs" />
+    <Compile Include="Models\Interfaces\BaseInterface\IRepository.cs" />
+    <Compile Include="Models\Interfaces\BLL\ICategoryManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\IDepartmentManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\IDesignationManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\IDetailCategoryManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\IEmployeeManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\IGeneralCategoryManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\IOrganizationBranchManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\IOrganizationManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\ISubCategoryManager.cs" />
+    <Compile Include="Models\Interfaces\BLL\IVendorManager.cs" />
+    <Compile Include="Models\Interfaces\DAL\ICategoryRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\IDepartmentRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\IDesignationRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\IDetailCategoryRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\IEmployeeRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\IGeneralCategoryRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\IOrganizationBranchRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\IOrganizationRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\ISubCategoryRepository.cs" />
+    <Compile Include="Models\Interfaces\DAL\IVendorRepository.cs" />
+    <Compile Include="Models\UiLoader\UiLoader.cs" />
+    <Compile Include="Models\ViewModel\AssetPurchaseCreateViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Compile Include="Models\EntityModel\AssetTracker.Context.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

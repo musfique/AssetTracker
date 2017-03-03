@@ -1,0 +1,46 @@
+﻿@model AssetTracker.Core.Models.GeneralCategory
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="container">
+    <h2>Create</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Create General Category</div>
+                <div class="panel-body">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.GeneralCategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.GeneralCategoryName, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                            @Html.ValidationMessageFor(model => model.GeneralCategoryName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.GeneralCategoryCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.GeneralCategoryCode, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                            @Html.ValidationMessageFor(model => model.GeneralCategoryCode, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-success" />
+                            <input type="button" value="Cancel" class="btn btn-danger" onclick="location.href = '@Url.Action("Index", "Home")'" />
+                            <input type="button" value="View All" class="btn btn-info" onclick="location.href='@Url.Action("Index", "GeneralCategory")'" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

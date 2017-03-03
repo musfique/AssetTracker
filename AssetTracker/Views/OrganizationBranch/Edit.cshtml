@@ -1,0 +1,60 @@
+﻿@model AssetTracker.Core.Models.OrganizationBranch
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="container">
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Edit Organization</div>
+            <div class="panel-body">
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.OrganizationBranchID)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.OrganizationID, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.OrganizationID, ViewBag.Organizations as IEnumerable<SelectListItem>, "Select a Organization", htmlAttributes: new { @class = "form-control text-box-border-color" })
+                            @Html.ValidationMessageFor(model => model.OrganizationID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.OrganizationBranchName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.OrganizationBranchName, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                            @Html.ValidationMessageFor(model => model.OrganizationBranchName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.OrganizatioBranchShortName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.OrganizatioBranchShortName, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                            @Html.ValidationMessageFor(model => model.OrganizatioBranchShortName, "", new { @class = "text-danger" })
+                            <span class="text-danger" id="organization-branch-short-name-exist"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-success" />
+                            <input type="button" value="Cancel" class="btn btn-danger" onclick="location.href = '@Url.Action("Index", "Home")'" />
+                            <input type="button" value="View All" class="btn btn-info" onclick="location.href='@Url.Action("Index", "OrganizationBranch")'" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                    
+}
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Asset Tracker/OrganizationBranch/Edit.js"></script>
+}

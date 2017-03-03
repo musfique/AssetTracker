@@ -1,0 +1,55 @@
+﻿@model AssetTracker.Core.Models.SubCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="form-horizontal">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Sub Category Details</div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Category.CategoryName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Category.CategoryName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SubCategoryName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SubCategoryName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SubCategoryCode)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SubCategoryCode)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SubCategoryDescription)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SubCategoryDescription)
+                    </dd>
+
+                </dl>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Edit" class="btn btn-warning" onclick="location.href = '@Url.Action("Edit", "SubCategory", new { id = Model.SubCategoryID })'" />
+                        <input type="button" value="View All" class="btn btn-info" onclick="location.href='@Url.Action("Index", "SubCategory")'" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

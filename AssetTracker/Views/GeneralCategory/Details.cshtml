@@ -1,0 +1,39 @@
+﻿@model AssetTracker.Core.Models.GeneralCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <div class="form-horizontal">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Organization Details</div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GeneralCategoryName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.GeneralCategoryName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GeneralCategoryCode)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.GeneralCategoryCode)
+                    </dd>
+
+                </dl>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Edit" class="btn btn-warning" onclick="location.href = '@Url.Action("Edit", "GeneralCategory", new { id = Model.GeneralCategoryID })'" />
+                        <input type="button" value="View All" class="btn btn-info" onclick="location.href='@Url.Action("Index", "GeneralCategory")'" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

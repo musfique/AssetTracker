@@ -1,0 +1,87 @@
+﻿@model AssetTracker.Core.Models.EntityModel.Employee
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="container">
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Create Employee</div>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.Label("Organization", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("OrganizationID", ViewBag.Organizations as IEnumerable<SelectListItem>, "Select a Organization", htmlAttributes: new { @class = "form-control text-box-border-color" })
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Branch", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("OrganizationBranchID", ViewBag.OrganizationBranches as IEnumerable<SelectListItem>, "Select a Branch", htmlAttributes: new { @class = "form-control text-box-border-color" })
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DepartmentID, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.DepartmentID, ViewBag.Departments as IEnumerable<SelectListItem>, "Select a Department", htmlAttributes: new { @class = "form-control text-box-border-color" })
+                                @Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EmployeeName, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                                @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DesignationID, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.DesignationID, ViewBag.Designations as IEnumerable<SelectListItem>, "Select a Designation", htmlAttributes: new { @class = "form-control text-box-border-color" })
+                                @Html.ValidationMessageFor(model => model.DesignationID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                                @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-success" />
+                                <input type="button" value="Cancel" class="btn btn-danger" onclick="location.href = '@Url.Action("Index", "Home")'" />
+                                <input type="button" value="View All" class="btn btn-info" onclick="location.href = '@Url.Action("Index", "Employee")'" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Asset Tracker/Employee/Create.js"></script>
+}

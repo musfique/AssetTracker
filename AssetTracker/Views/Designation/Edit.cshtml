@@ -1,0 +1,41 @@
+﻿@model AssetTracker.Core.Models.EntityModel.Designation
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="container">
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <br />
+            <div class="panel panel-primary">
+                <div class="panel-heading">Edit Designation</div>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.DesignationID)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DesignationName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DesignationName, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                                @Html.ValidationMessageFor(model => model.DesignationName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save" class="btn btn-success" />
+                                <input type="button" value="Cancel" class="btn btn-danger" onclick="location.href = '@Url.Action("Index", "Home")'" />
+                                <input type="button" value="View All" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Designation")'" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

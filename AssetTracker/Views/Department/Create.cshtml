@@ -1,0 +1,54 @@
+﻿@model AssetTracker.Core.Models.EntityModel.Department
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="container">
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Create Department</div>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.Label("Organization", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("OrganizationID", ViewBag.Organizations as IEnumerable<SelectListItem>, "Select a Organization", htmlAttributes: new { @class = "form-control text-box-border-color" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OrganizationBranchID, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.OrganizationBranchID, ViewBag.OrganizationBranches as IEnumerable<SelectListItem>, "Select a Branch", htmlAttributes: new { @class = "form-control text-box-border-color" })
+                                @Html.ValidationMessageFor(model => model.OrganizationBranchID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DepartmentName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DepartmentName, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
+                                @Html.ValidationMessageFor(model => model.DepartmentName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-success" />
+                                <input type="button" value="Cancel" class="btn btn-danger" onclick="location.href = '@Url.Action("Index", "Home")'" />
+                                <input type="button" value="View All" class="btn btn-info" onclick="location.href = '@Url.Action("Index", "Department")'" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Asset Tracker/Organization/Create.js"></script>
+}

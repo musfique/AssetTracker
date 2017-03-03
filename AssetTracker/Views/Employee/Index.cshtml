@@ -1,0 +1,79 @@
+﻿@model IEnumerable<AssetTracker.Core.Models.EntityModel.Employee>
+
+@section css{
+    @Styles.Render("~/Content/datatablecss")
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">View All Employees</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="button" value="Create" class="btn btn-success" onclick="location.href = '@Url.Action("Create", "Employee")'" />
+
+                </div>
+            </div>
+            <table class="table table-hover table-background table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Designation.DesignationName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ContactNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Designation.DesignationName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ContactNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.EmployeeID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/datatablejs")
+    <script>
+        $(document).ready(function () {
+            $(".table").DataTable();
+        });
+    </script>
+}

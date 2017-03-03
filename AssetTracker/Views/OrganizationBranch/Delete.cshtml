@@ -1,0 +1,55 @@
+﻿@model AssetTracker.Core.Models.OrganizationBranch
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="container">
+    <div class="form-horizontal">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Delete Organization Branch</div>
+            <div class="panel-body">
+                <h3>Are you sure you want to delete this?</h3>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Organization.OrganizationName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Organization.OrganizationName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.OrganizationBranchName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.OrganizationBranchName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.OrganizatioBranchShortName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.OrganizatioBranchShortName)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                            <input type="button" value="Edit" class="btn btn-warning" onclick="location.href = '@Url.Action("Edit", "OrganizationBranch", new { id = Model.OrganizationID })'" />
+                            <input type="button" value="View All" class="btn btn-info" onclick="location.href='@Url.Action("Index", "OrganizationBranch")'" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

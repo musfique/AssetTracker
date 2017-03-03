@@ -1,0 +1,94 @@
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+.dropdown-submenu>a:after {
+    display: block;
+    content: "";
+    float: right;
+    font-family: fontawesome;
+    width: 0;
+    font-size: 15px;
+    height: 0;
+    border-color: none; 
+    border-style: none; 
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    padding-left: 7px;
+    padding-right: 2px;
+}
+.extra-menu{top: 46px !important;animation: fadeInUp 400ms; }
+.extra-dropdown{left: 180px !important;}
+
+.navbar-fixed-top{position: fixed; top: 0; z-index: 5; width: 100%;}
+.carousel-inner{ height: 550px; margin-top: 61px;}
+.fa-angle-right{
+    float: right;
+}
+.container-override {
+        max-width: 100% !important;
+   margin: 0;
+    padding: 0;
+}
+.item.active img {
+    width: 100%;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  width: 100%;  
+}
+.text-box-border-color {
+    border-color: #428bca !important;
+}
+.panel {
+    margin-top: 50px;
+    border: 1px solid #428bca;
+}
+.table-background {
+    background-color: white !important;
+}

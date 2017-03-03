@@ -1,0 +1,80 @@
+﻿@model AssetTracker.Core.Models.EntityModel.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <div class="form-horizontal">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Employee Details</div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayName("Organization Name")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Department.OrganizationBranch.Organization.OrganizationName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Department.OrganizationBranch.OrganizationBranchName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Department.OrganizationBranch.OrganizationBranchName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Department.DepartmentName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Department.DepartmentName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Designation.DesignationName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Designation.DesignationName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EmployeeName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.EmployeeName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ContactNo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ContactNo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                </dl>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Edit" class="btn btn-warning" onclick="location.href = '@Url.Action("Edit", "Employee", new { id = Model.EmployeeID })'" />
+                        <input type="button" value="View All" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Employee")'" />
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

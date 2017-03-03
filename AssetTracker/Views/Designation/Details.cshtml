@@ -1,0 +1,30 @@
+﻿@model AssetTracker.Core.Models.EntityModel.Designation
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <div class="form-horizontal">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Designation Details</div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DesignationName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DesignationName)
+                    </dd>
+
+                </dl>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Edit" class="btn btn-warning" onclick="location.href = '@Url.Action("Edit", "Designation", new { id = Model.DesignationID })'" />
+                        <input type="button" value="View All" class="btn btn-info" onclick="location.href='@Url.Action("Index", "Designation")'" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

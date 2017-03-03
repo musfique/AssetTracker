@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AssetTracker.Core.Models.OrganizationBranch>
+
+@section css{
+    @Styles.Render("~/Content/datatablecss")
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">View All Organizations</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="button" value="Create" class="btn btn-success" onclick="location.href = '@Url.Action("Create", "OrganizationBranch")'" />
+
+                </div>
+            </div>
+            <table class="table table-hover table-background table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Organization.OrganizationName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrganizationBranchName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OrganizatioBranchShortName)
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Organization.OrganizationName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrganizationBranchName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrganizatioBranchShortName)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.OrganizationBranchID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.OrganizationBranchID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.OrganizationBranchID })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/datatablejs")
+    <script>
+        $(document).ready(function () {
+            $(".table").DataTable();
+        });
+    </script>
+}
