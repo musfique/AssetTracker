@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using AssetTracker.Core.BLL;
 using AssetTracker.Core.Models.EntityModel;
 using AssetTracker.Core.Models.Interfaces;
-using AssetTracker.Core.Models.Interfaces.BLL;
+using AssetTracker.Core.Models.Interfaces.IManager;
 
 namespace AssetTracker.Controllers
 {

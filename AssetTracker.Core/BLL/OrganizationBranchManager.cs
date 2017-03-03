@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AssetTracker.Core.DAL;
 using System.Data.Entity;
-using AssetTracker.Core.Models.Interfaces.BLL;
-using AssetTracker.Core.Models.Interfaces.DAL;
+using AssetTracker.Core.Models.Interfaces.IManager;
+using AssetTracker.Core.Models.Interfaces.IRepository;
 
 namespace AssetTracker.Core.BLL {
     public class OrganizationBranchManager : IOrganizationBranchManager

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AssetTracker.Core.BLL;
-using AssetTracker.Core.Models.Interfaces.BLL;
+using AssetTracker.Core.Models.Interfaces.IManager;
 
 namespace AssetTracker.Controllers
 {

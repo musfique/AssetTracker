@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AssetTracker.Core.Models.Interfaces.BLL;
 using System.Web.Mvc;
+using AssetTracker.Core.Models.Interfaces.IManager;
 
 namespace AssetTracker.Core.Models.UiLoader
 {

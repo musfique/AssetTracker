@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AssetTracker.Core.Models;
-using AssetTracker.Core.Models.Interfaces.BLL;
+using AssetTracker.Core.Models.Interfaces.IManager;
+using AssetTracker.Core.Models.Interfaces.IRepository;
 
 namespace AssetTracker.Core.BLL
 {

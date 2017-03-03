@@ -1,15 +1,13 @@
 using System;
 using System.Data.Entity;
-using AssetTracker.Core.DAL;
-using AssetTracker.Core.Models.Interfaces;
-using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 using AssetTracker.Core.BLL;
+using AssetTracker.Core.DAL;
 using AssetTracker.Core.Models.EntityModel;
-using AssetTracker.Core.Models.Interfaces.BLL;
-using AssetTracker.Core.Models.Interfaces.DAL;
+using AssetTracker.Core.Models.Interfaces.IManager;
+using AssetTracker.Core.Models.Interfaces.IRepository;
+using Microsoft.Practices.Unity;
 
-namespace AssetTracker.App_Start
+namespace AssetTracker
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.

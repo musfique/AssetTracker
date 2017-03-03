@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using AssetTracker.Core.DAL;
 using AssetTracker.Core.Models.EntityModel;
 using AssetTracker.Core.Models.Interfaces.BaseInterface;
-using AssetTracker.Core.Models.Interfaces.BLL;
-using AssetTracker.Core.Models.Interfaces.DAL;
+using AssetTracker.Core.Models.Interfaces.IManager;
+using AssetTracker.Core.Models.Interfaces.IRepository;
 
 namespace AssetTracker.Core.BLL
 {
