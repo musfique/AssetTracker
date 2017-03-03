@@ -75,9 +75,9 @@ namespace AssetTracker.Controllers
             
           var assetPurchase = Mapper.Map<AssetPurchaseHeader>(assetPurchaseVm);
 
-            using (AssetTrackerEntities db = new AssetTrackerEntities())
+            using (AssetTrackerContext db = new AssetTrackerContext())
             {
-                db..Add(assetPurchase);
+                db.AssetPurchaseHeaders.Add(assetPurchase);
                 db.SaveChanges();
             }
             

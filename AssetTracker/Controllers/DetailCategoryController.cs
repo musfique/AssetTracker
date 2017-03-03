@@ -158,5 +158,21 @@ namespace AssetTracker.Controllers
         {
             return Json(_detailCategoryManager.IsDetailCategoryCodeAvilable(detailCategoryCode, detailCategoryId, subCategoryId), JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult GetAllBySubCategoryId(int subCategoryId)
+        {
+            var detailCategories = _detailCategoryManager
+                .GetAllBySubCategoryId(subCategoryId)
+                .Select(c => new
+                {
+                    c.DetailCategoryID,
+                    c.SubCategoryID,
+                    c.DetailCategoryCode,
+                    c.DetailCategoryName,
+                    c.DetailCategoryDescription
+                }).ToList();
+
+            return Json(detailCategories, JsonRequestBehavior.AllowGet);
+        }
     }
 }

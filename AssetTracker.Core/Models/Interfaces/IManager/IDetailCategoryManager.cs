@@ -1,9 +1,11 @@
-﻿using AssetTracker.Core.Models.Interfaces.BaseInterface;
+﻿using System.Collections.Generic;
+using AssetTracker.Core.Models.Interfaces.BaseInterface;
 
 namespace AssetTracker.Core.Models.Interfaces.IManager
 {
     public interface IDetailCategoryManager: IManager<DetailCategory>
     {
+        ICollection<DetailCategory> GetAllBySubCategoryId(int subCategoryId);
         DetailCategory GetByDetailCategoryName(string detailCategoryName);
         DetailCategory GetByDetailCategoryCode(string detailCategoryCode);
         DetailCategory GetByDetailCategoryCodeAndCategoryId(string detailCategoryCode, int subCategoryId);

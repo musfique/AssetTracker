@@ -88,9 +88,20 @@
     <Compile Include="BLL\OrganizationManager.cs" />
     <Compile Include="BLL\SubCategoryManager.cs" />
     <Compile Include="BLL\VendorManager.cs" />
+    <Compile Include="BLL\WarrantyPeriodUnitManager.cs" />
+    <Compile Include="Migrations\201703031303463_Initial.cs" />
+    <Compile Include="Migrations\201703031303463_Initial.Designer.cs">
+      <DependentUpon>201703031303463_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CustomException\BLLException.cs" />
+    <Compile Include="Models\CustomException\RepositoryException.cs" />
+    <Compile Include="Models\CustomException\UiException.cs" />
     <Compile Include="Models\EntityModel\AssetPurchaseHeader.cs" />
     <Compile Include="Models\EntityModel\AssetPurchaseSerialNumber.cs" />
+    <Compile Include="Models\Interfaces\IManager\IWarrantyPeriodUnitManager.cs" />
     <Compile Include="Models\Interfaces\IModel\IAudit.cs" />
+    <Compile Include="Models\Interfaces\IRepository\IWarrantyPeriodUnitRepository.cs" />
     <Compile Include="Repository\BaseRepository\BaseRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\DepartmentRepository.cs" />
@@ -102,7 +113,6 @@
     <Compile Include="Repository\OrganizationRepository.cs" />
     <Compile Include="Repository\SubCategoryRepository.cs" />
     <Compile Include="Repository\VendorRepository.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EntityModel\AssetLocation.cs" />
     <Compile Include="Models\EntityModel\AssetPurchaseDetail.cs" />
     <Compile Include="Models\EntityModel\AssetPurchaseDetailSerialNumber.cs" />
@@ -142,11 +152,17 @@
     <Compile Include="Models\UiLoader\UiLoader.cs" />
     <Compile Include="Models\ViewModel\AssetPurchaseCreateViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\WarrantyPeriodUnitRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <Compile Include="Models\EntityModel\AssetTracker.Context.cs" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703031303463_Initial.resx">
+      <DependentUpon>201703031303463_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

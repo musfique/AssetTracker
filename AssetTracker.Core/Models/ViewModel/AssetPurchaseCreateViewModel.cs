@@ -52,7 +52,7 @@ namespace AssetTracker.Core.Models.ViewModel
 
         [Display(Name = "Detail Category Code")]
         public int DetailCategoryCode { get; set; }
-
+        [Range(0,double.MaxValue)]
         public double Quantity { get; set; }
         public double Price { get; set; }
 

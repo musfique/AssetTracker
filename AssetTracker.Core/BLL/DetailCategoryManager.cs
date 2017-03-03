@@ -62,6 +62,11 @@ namespace AssetTracker.Core.BLL
                 c => c.SubCategory.Category.GeneralCategory);
         }
 
+        public ICollection<DetailCategory> GetAllBySubCategoryId(int subCategoryId)
+        {
+            return _detailCategoryRepository.Get(c => c.SubCategoryID == subCategoryId);
+        }
+
         public DetailCategory GetByDetailCategoryName(string detailCategoryName)
         {
             return _detailCategoryRepository

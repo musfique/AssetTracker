@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AssetTracker.Core.Models.Interfaces.IModel;
 
 namespace AssetTracker.Core.Models.EntityModel
 {
-    public class AssetPurchaseHeader
+    public class AssetPurchaseHeader:IAudit
     {
         [Key]
         public int AssetPurchaseHeaderID { get; set; }
@@ -18,20 +19,19 @@ namespace AssetTracker.Core.Models.EntityModel
 
         [Required]
         [Display(Name = "Purchased Date")]
-        public DateTime PurchasedDate { get; set; }
+        public DateTime PurchasedOn { get; set; }
 
         [Required]
         [Display(Name = "Purchased By")]
         public int PurchasedBy { get; set; }
 
-        [Required]
-        public DateTime CreatedDate { get; set; }
-        [Required]
-        public int CreatedBy { get; set; }
-
         public int OrganizationBranchID { get; set; }
 
         public OrganizationBranch OrganizationBranch { get; set; }
         public ICollection<AssetPurchaseDetail> AssetPurchaseDetails { get; set; }
+        public int CreatedBy { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public int? LastModifiedBy { get; set; }
+        public DateTime? LastModifiedOn { get; set; }
     }
 }

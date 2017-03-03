@@ -5,6 +5,7 @@ using AssetTracker.Core.DAL;
 using AssetTracker.Core.Models.EntityModel;
 using AssetTracker.Core.Models.Interfaces.IManager;
 using AssetTracker.Core.Models.Interfaces.IRepository;
+using AssetTracker.Core.Repository;
 using Microsoft.Practices.Unity;
 
 namespace AssetTracker
@@ -74,6 +75,10 @@ namespace AssetTracker
 
             container.RegisterType<IDetailCategoryManager, DetailCategoryManager>();
             container.RegisterType<IDetailCategoryRepository, DetailCategoryRepository>();
+            
+            container.RegisterType<IWarrantyPeriodUnitManager, WarrantyPeriodUnitManager>();
+            container.RegisterType<IWarrantyPeriodUnitRepository, WarrantyPeriodUnitRepository>();
+            
 
            
         }

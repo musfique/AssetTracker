@@ -32,5 +32,8 @@ namespace AssetTracker.Core.Models.EntityModel
         public DbSet<Department> Departments { get; set; }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<AssetPurchaseHeader> AssetPurchaseHeaders { get; set; }
+        public DbSet<AssetPurchaseDetail> AssetPurchaseDetails { get; set; }
+        public DbSet<AssetPurchaseDetailSerialNumber> AssetPurchaseDetailSerialNumbers { get; set; }
     }
 }

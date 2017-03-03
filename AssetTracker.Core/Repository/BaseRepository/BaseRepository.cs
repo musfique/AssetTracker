@@ -34,7 +34,7 @@ namespace AssetTracker.Core.DAL.BaseDAL
             }
             catch (Exception)
             {
-                return false;
+                throw new Exception();
             }
         }
 
@@ -48,7 +48,7 @@ namespace AssetTracker.Core.DAL.BaseDAL
             }
             catch (Exception)
             {
-                return false;
+                throw new Exception();
             }
         }
 
@@ -60,7 +60,7 @@ namespace AssetTracker.Core.DAL.BaseDAL
                 db.SaveChanges();
                 return true;
             } catch (Exception) {
-                return false;
+               throw new Exception();
             }
         }
 
