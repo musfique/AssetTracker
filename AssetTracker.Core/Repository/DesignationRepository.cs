@@ -13,11 +13,11 @@ namespace AssetTracker.Core.DAL
 {
     public class DesignationRepository : BaseRepository<Designation>, IDesignationRepository, IDisposable
     {
-        private AssetTrackerEntities Context
+        private AssetTrackerContext Context
         {
             get
             {
-                return db as AssetTrackerEntities;
+                return db as AssetTrackerContext;
             }
         }
         public DesignationRepository(DbContext db)

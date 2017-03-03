@@ -12,9 +12,9 @@ namespace AssetTracker.Core.Repository
 {
     public class WarrantyPeriodUnitRepository : BaseRepository<WarrantyPeriodUnit>, IWarrantyPeriodUnitRepository,IDisposable
     {
-        public AssetTrackerEntities Context
+        public AssetTrackerContext Context
         {
-            get { return db as AssetTrackerEntities; }
+            get { return db as AssetTrackerContext; }
         }
         public WarrantyPeriodUnitRepository(DbContext db) : base(db)
         {

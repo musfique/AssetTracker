@@ -43,7 +43,7 @@ namespace AssetTracker
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
 
-            container.RegisterType<DbContext, AssetTrackerEntities>();
+            container.RegisterType<DbContext, AssetTrackerContext>();
             
             container.RegisterType<IOrganizationManager, OrganizationManager>();
             container.RegisterType<IOrganizationRepository, OrganizationRepository>();

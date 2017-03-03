@@ -12,9 +12,9 @@ using AssetTracker.Core.Models.Interfaces.IRepository;
 namespace AssetTracker.Core.DAL {
     public class CategoryRepository : BaseRepository<Category>,ICategoryRepository,IDisposable
     {
-        public AssetTrackerEntities Context
+        public AssetTrackerContext Context
         {
-            get { return db as AssetTrackerEntities; }
+            get { return db as AssetTrackerContext; }
         }
 
         public CategoryRepository(DbContext db) : base(db)

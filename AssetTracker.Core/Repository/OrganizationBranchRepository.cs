@@ -16,11 +16,11 @@ namespace AssetTracker.Core.DAL
     public class OrganizationBranchRepository : BaseRepository<OrganizationBranch>, IOrganizationBranchRepository, IDisposable
     {
 
-        private AssetTrackerEntities Context
+        private AssetTrackerContext Context
         {
             get
             {
-                return db as AssetTrackerEntities;
+                return db as AssetTrackerContext;
             }
         }
         public OrganizationBranchRepository(DbContext db)

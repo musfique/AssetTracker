@@ -9,9 +9,9 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace AssetTracker.Core.Models.EntityModel
 {
-    public class AssetTrackerEntities :DbContext
+    public class AssetTrackerContext :DbContext
     {
-        public AssetTrackerEntities()
+        public AssetTrackerContext()
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;

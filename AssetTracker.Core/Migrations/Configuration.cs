@@ -5,14 +5,14 @@ namespace AssetTracker.Core.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AssetTracker.Core.Models.EntityModel.AssetTrackerEntities>
+    internal sealed class Configuration : DbMigrationsConfiguration<AssetTracker.Core.Models.EntityModel.AssetTrackerContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AssetTracker.Core.Models.EntityModel.AssetTrackerEntities context)
+        protected override void Seed(AssetTracker.Core.Models.EntityModel.AssetTrackerContext context)
         {
             //  This method will be called after migrating to the latest version.
 

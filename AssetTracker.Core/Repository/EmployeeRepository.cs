@@ -11,11 +11,11 @@ using AssetTracker.Core.Models.Interfaces.IRepository;
 namespace AssetTracker.Core.DAL {
     public class EmployeeRepository :BaseRepository<Employee>,IEmployeeRepository,IDisposable
     {
-        private AssetTrackerEntities Context
+        private AssetTrackerContext Context
         {
             get
             {
-                return db as AssetTrackerEntities;
+                return db as AssetTrackerContext;
             }
         }
         public EmployeeRepository(DbContext db) : base(db)

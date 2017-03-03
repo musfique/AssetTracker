@@ -7,6 +7,7 @@ using AssetTracker.Core.BLL;
 using AssetTracker.Core.Models.EntityModel;
 using AssetTracker.Core.Models.Interfaces.IManager;
 using AssetTracker.Core.Models.ViewModel;
+using AutoMapper;
 
 namespace AssetTracker.Controllers
 {
@@ -19,8 +20,9 @@ namespace AssetTracker.Controllers
         private ICategoryManager _categoryManager;
         private ISubCategoryManager _subCategoryManager;
         private IDetailCategoryManager _detailCategoryManager;
+        private IWarrantyPeriodUnitManager _warrantyPeriodUnitManager;
 
-        public AssetPurchaseController(IVendorManager vendorManager, IOrganizationManager organizationManager, IOrganizationBranchManager organizationBranch, IGeneralCategoryManager generalCategoryManager, ICategoryManager categoryManager, ISubCategoryManager subCategoryManager, IDetailCategoryManager detailCategoryManager)
+        public AssetPurchaseController(IVendorManager vendorManager, IOrganizationManager organizationManager, IOrganizationBranchManager organizationBranch, IGeneralCategoryManager generalCategoryManager, ICategoryManager categoryManager, ISubCategoryManager subCategoryManager, IDetailCategoryManager detailCategoryManager, IWarrantyPeriodUnitManager warrantyPeriodUnitManager)
         {
             _vendorManager = vendorManager;
             _organizationManager = organizationManager;
@@ -29,6 +31,7 @@ namespace AssetTracker.Controllers
             _categoryManager = categoryManager;
             _subCategoryManager = subCategoryManager;
             _detailCategoryManager = detailCategoryManager;
+            _warrantyPeriodUnitManager = warrantyPeriodUnitManager;
         }
 
         // GET: AssetPurchase
@@ -51,7 +54,7 @@ namespace AssetTracker.Controllers
                 VendorsSelectList =  new SelectList(_vendorManager.GetAll(),"VendorID","VendorName"),
                 OrganizationsSelectList = new SelectList(_organizationManager.GetAll(),"OrganizationID","OrganizationName"),
                 OrganizationBranchesSelectList = new SelectList(Enumerable.Empty<SelectListItem>()),
-                //WarrantyPeriodUnitsSelectList = new SelectList(_warrantyPeriodUnitManager.GetAllWarrantyPeriodUnits(), "WarrantyPeriodUnitID", "WarrantyPeriodUnitName"),
+                WarrantyPeriodUnitsSelectList = new SelectList(_warrantyPeriodUnitManager.GetAll(), "WarrantyPeriodUnitID", "WarrantyPeriodUnitName"),
                 GeneralCategoriesSelectList = new SelectList(_generalCategoryManager.GetAll(), "GeneralCategoryID", "GeneralCategoryName"),
                 CategoriesSelectList = new SelectList(Enumerable.Empty<SelectListItem>()),
                 SubCategoriesSelectList = new SelectList(Enumerable.Empty<SelectListItem>()),
@@ -61,7 +64,7 @@ namespace AssetTracker.Controllers
 
                 
             };
-            return System.Web.UI.WebControls.View(assetPurchasevm);
+            return View(assetPurchasevm);
         }
 
         // POST: AssetPurchase/Create
@@ -70,11 +73,11 @@ namespace AssetTracker.Controllers
         {
 
             
-          var assetPurchase = Mapper.Map<AssetPurchase>(assetPurchaseVm);
+          var assetPurchase = Mapper.Map<AssetPurchaseHeader>(assetPurchaseVm);
 
             using (AssetTrackerEntities db = new AssetTrackerEntities())
             {
-                db.AssetPurchases.Add(assetPurchase);
+                db..Add(assetPurchase);
                 db.SaveChanges();
             }
             

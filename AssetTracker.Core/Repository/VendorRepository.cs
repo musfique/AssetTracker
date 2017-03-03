@@ -13,11 +13,11 @@ namespace AssetTracker.Core.DAL
 {
     public class VendorRepository:BaseRepository<Vendor>,IVendorRepository,IDisposable
     {
-        private AssetTrackerEntities Context
+        private AssetTrackerContext Context
         {
             get
             {
-                return db as AssetTrackerEntities;
+                return db as AssetTrackerContext;
             }
         }
         
