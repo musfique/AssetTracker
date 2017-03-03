@@ -19,14 +19,14 @@
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.OrganizationID, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
-                                    @Html.DropDownListFor(model => model.OrganizationID, Model.OrganizationsSelectList, "Select a Organization", new { @class = "form-control" })
+                                    @Html.DropDownListFor(model => model.OrganizationID, Model.OrganizationsSelectList, "Select a Organization", new { @class = "form-control text-box-border-color" })
                                     @Html.ValidationMessageFor(model => model.OrganizationID, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.OrganizationBranchID, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
-                                    @Html.DropDownListFor(model => model.OrganizationBranchID, Model.OrganizationBranchesSelectList, "Select a Organization Branch", new { @class = "form-control" })
+                                    @Html.DropDownListFor(model => model.OrganizationBranchID, Model.OrganizationBranchesSelectList, "Select a Organization Branch", new { @class = "form-control text-box-border-color" })
                                     @Html.ValidationMessageFor(model => model.OrganizationBranchID, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.PurchasedBy, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
-                                    @Html.EditorFor(model => model.PurchasedBy, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.PurchasedBy, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
                                     @Html.ValidationMessageFor(model => model.PurchasedBy, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.PurchasedDate, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
-                                    @Html.TextBoxFor(model => model.PurchasedDate, new { @class = "form-control", @Type = "Date" })
+                                    @Html.TextBoxFor(model => model.PurchasedDate, new { @class = "form-control text-box-border-color", @Type = "Date" })
                                     @Html.ValidationMessageFor(model => model.PurchasedDate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.VendorID, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
-                                    @Html.DropDownListFor(model => model.VendorID, Model.VendorsSelectList, "Select a Vendor", new { @class = "form-control" })
+                                    @Html.DropDownListFor(model => model.VendorID, Model.VendorsSelectList, "Select a Vendor", new { @class = "form-control text-box-border-color" })
                                     @Html.ValidationMessageFor(model => model.VendorID, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.GeneralCategoryID, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     <div class="col-md-8">
-                                                        @Html.DropDownListFor(model => model.GeneralCategoryID, Model.GeneralCategoriesSelectList, "Select a General Category", new { @class = "form-control" })
+                                                        @Html.DropDownListFor(model => model.GeneralCategoryID, Model.GeneralCategoriesSelectList, "Select a General Category", new { @class = "form-control text-box-border-color" })
                                                     </div>
                                                 </div>
                                             </div>
@@ -86,7 +86,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     <div class="col-md-8">
-                                                        @Html.DropDownListFor(model => model.CategoryID, Model.CategoriesSelectList, "Select a Category", new { @class = "form-control" })
+                                                        @Html.DropDownListFor(model => model.CategoryID, Model.CategoriesSelectList, "Select a Category", new { @class = "form-control text-box-border-color" })
 
                                                     </div>
                                                 </div>
@@ -95,7 +95,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.SubCategoryID, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     <div class="col-md-8">
-                                                        @Html.DropDownListFor(model => model.SubCategoryID, Model.SubCategoriesSelectList, "Select a Sub Category", new { @class = "form-control" })
+                                                        @Html.DropDownListFor(model => model.SubCategoryID, Model.SubCategoriesSelectList, "Select a Sub Category", new { @class = "form-control text-box-border-color" })
 
                                                     </div>
                                                 </div>
@@ -104,7 +104,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.DetailCategoryID, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     <div class="col-md-8">
-                                                        @Html.DropDownListFor(model => model.DetailCategoryID, Model.DetailCategoriesSelectList, "Select a Detail Category", new { @class = "form-control" })
+                                                        @Html.DropDownListFor(model => model.DetailCategoryID, Model.DetailCategoriesSelectList, "Select a Detail Category", new { @class = "form-control text-box-border-color" })
 
                                                     </div>
                                                 </div>
@@ -114,7 +114,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     <div class="col-md-8">
-                                                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
                                                         @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
@@ -128,7 +128,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     <div class="col-md-8">
-                                                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control text-box-border-color" } })
                                                         @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
@@ -138,7 +138,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.HasWarranty, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     <div class="col-md-8">
-                                                        @Html.EditorFor(model => model.HasWarranty, new { @class = "form-control" })
+                                                        @Html.EditorFor(model => model.HasWarranty, new { @class = "form-control text-box-border-color" })
                                                         @Html.ValidationMessageFor(model => model.HasWarranty, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
@@ -147,7 +147,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.WarrantyPeriodUnitID, htmlAttributes: new { @class = "control-label col-md-4" })
                                                     <div class="col-md-8">
-                                                        @Html.DropDownListFor(model => model.WarrantyPeriodUnitID, Model.WarrantyPeriodUnitsSelectList, "Select a Warranty Period Unit", new { @class = "form-control", @disabled = true })
+                                                        @Html.DropDownListFor(model => model.WarrantyPeriodUnitID, Model.WarrantyPeriodUnitsSelectList, "Select a Warranty Period Unit", new { @class = "form-control text-box-border-color", @disabled = true })
 
                                                     </div>
                                                 </div>
@@ -156,7 +156,7 @@
                                                 <div class="form-group">
                                                     @Html.LabelFor(model => model.WarrantyPeriod, htmlAttributes: new {@class = "control-label col-md-4"})
                                                     <div class="col-md-8">
-                                                        @Html.EditorFor(model => model.WarrantyPeriod, new {htmlAttributes = new {@class = "form-control", @readonly = true}})
+                                                        @Html.EditorFor(model => model.WarrantyPeriod, new { htmlAttributes = new { @class = "form-control text-box-border-color", @readonly = true } })
                                                         @Html.ValidationMessageFor(model => model.WarrantyPeriod, "", new {@class = "text-danger"})
                                                     </div>
                                                 </div>
@@ -234,6 +234,7 @@
 
 @section Scripts {
     <script>
+        var itemList = [];
         $(document).ready(function () {
             var $organization = $("#OrganizationID");
             var $organizationBranch = $("#OrganizationBranchID");
@@ -248,7 +249,6 @@
             var $hasWarranty = $("#HasWarranty");
             var $warrantyPeriodUnit = $("#WarrantyPeriodUnitID");
             var $warrantyPeriod = $("#WarrantyPeriod");
-            var itemList = [];
 
 
 
@@ -290,11 +290,16 @@
                     getAllCategories();
                     $subCategory.empty().append(subCategoryDefaultOption);
                 } else {
-                    $category.empty().append(categoryDefaultOption);
-                    $subCategory.empty().append(subCategoryDefaultOption);
-                    $detailCategory.empty().append(detailCategoryDefaultOption);
+                    ClearCategorySubCategoryDetailCategoryDropdown();
                 }
             });
+
+            function ClearCategorySubCategoryDetailCategoryDropdown() {
+                $category.empty().append(categoryDefaultOption);
+                $subCategory.empty().append(subCategoryDefaultOption);
+                $detailCategory.empty().append(detailCategoryDefaultOption);
+            }
+
             function getAllCategories() {
                 $.ajax({
                     url: "/Category/GetAllByGeneralCategoryId",
@@ -364,24 +369,30 @@
                     $warrantyPeriodUnit.prop("disabled", false);
                     $warrantyPeriod.prop("readonly", false);
                 } else {
-                    $warrantyPeriodUnit.prop("disabled", true);
-                    $warrantyPeriod.prop("readonly", true);
+                    ClearWarrantyPeriod();
                 }
             });
+
+            function ClearWarrantyPeriod() {
+                $warrantyPeriodUnit.prop("disabled", true);
+                $warrantyPeriod.prop("readonly", true);
+                $warrantyPeriodUnit.val('');
+                $warrantyPeriod.val('');
+            }
             $("#addItemButton").click(function () {
                 detailCategoryId = $detailCategory.val();
                 priceValue = parseFloat($price.val());
                 quantityValue = parseFloat($quantity.val());
                 hasWarrantyValue = $hasWarranty.val();
                 warrantyPeriodUnitId = $warrantyPeriodUnit.val();
-                warrantyPeriodValue = $warrantyPeriod.val();
+                warrantyPeriodValue = parseFloat($warrantyPeriod.val());
 
 
-                if (detailCategoryId > 0 && priceValue !== "" && priceValue !== "" && quantityValue !== "" && ((hasWarrantyChecked && warrantyPeriodUnitId > 0) || !hasWarrantyChecked)) {
+                if (detailCategoryId > 0 && priceValue !== "" && quantityValue !== "" && ((hasWarrantyChecked && warrantyPeriodUnitId > 0 && warrantyPeriodValue) || !hasWarrantyChecked)) {
                     addRowForItem();
                 } else {
                     $("#errorMsgForForm").fadeTo(2000, 500).slideUp(500);
-                    //return false;
+                   return false;
                 }
 
                 //return false;
@@ -429,14 +440,22 @@
                 var total = "<td>" + selectedItem.Price * selectedItem.Quantity + "</td>";
 
 
-                var editCell = "<td><input id='btnEditItem' class='btn btn-xs btn-success btn-rounded' type='button' value='Edit' onclick='editRowForItem(" + index + ");' />";
-                var removeCell = "<td><input id='btnRemoveItem' class='btn btn-xs btn-danger btn-rounded' type='button' value='Remove' onclick='removeRowForItem(" + index + ");' /></td>";
+                var editCell = "<td><input id='btnEditItem' class='btn btn-xs btn-success btn-rounded' type='button' value='Edit' onclick='editRowForItem(" + index + ");'/>";
+                var removeCell = "<input id='btnRemoveItem' class='btn btn-xs btn-danger btn-rounded' type='button' value='Remove' onclick='removeRowForItem(" + index + ");' /></td>";
                 var newRow = "<tr id='trItems" + index + "'>" +
-                indexCell + serialCell + genCategoryCell + categoryCell + subCeneralCell + detailCategoryCell + warrantyPeriod + quantity + price + total + editCell + removeCell + "</tr>";
+                    indexCell + serialCell + genCategoryCell + categoryCell + subCeneralCell + detailCategoryCell + warrantyPeriod + quantity + price + total + editCell + removeCell + "</tr>";
                 $("#itemsListTable").append(newRow);
+                ClearDetail();
+
             }
 
-
+            function ClearDetail() {
+                $generalCategory.val('');
+                ClearCategorySubCategoryDetailCategoryDropdown();
+                $price.val('');
+                $quantity.val('');
+                ClearWarrantyPeriod();
+            }
             function getSelectedtItem() {
                 detailCategoryId = $detailCategory.val();
                 priceValue = $price.val();
@@ -462,24 +481,22 @@
                 }
                 return itemObj;
             }
-
-            function removeRowForItem(id)
-            {
-                var controlToBeRemoved = "#trItems" + id;
-
-                $(controlToBeRemoved).remove();
-            }
-
-            function editRowForItem(id)
-            {
-                var controlToBeEdited = "#trItems" + id;
-
-                var editable = $(controlToBeEdited);
-            }
-
+            
         });
 
+        function removeRowForItem(id)
+        {
+            var controlToBeRemoved = "#trItems" + id;
+            itemList.pop(id);
+            $(controlToBeRemoved).remove();
+        }
 
+        function editRowForItem(id)
+        {
+            var controlToBeEdited = "#trItems" + id;
+
+            var editable = $(controlToBeEdited);
+        }
 
     </script>
 }
